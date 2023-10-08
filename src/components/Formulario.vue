@@ -7,7 +7,9 @@
       <div class="column">
         <div class="is-flex is-align-items-center is-justify-content-space-between">
         <section>
-          <strong>00:00:00</strong>
+          <strong>
+            {{ tempoEmsegundos }}
+          </strong>
         </section>
         <button class="button" @click="iniciar">
           <span class="icon">
@@ -33,8 +35,18 @@
 
   export default defineComponent({
     name: 'Formulário',
+    data () {
+      return {
+        tempoEmsegundos: 0
+      }
+    },
     methods: {
       iniciar () {
+        // começar a contagem
+        // 1 seg = 1000 ms
+        setInterval(() => {
+          this.tempoEmsegundos += 1
+        }, 1000)
         console.log("Iniciando")
       },
       finalizar () {
