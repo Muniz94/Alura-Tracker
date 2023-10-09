@@ -8,7 +8,7 @@
         <div class="is-flex is-align-items-center is-justify-content-space-between">
         <section>
           <strong>
-            {{ tempoEmsegundos }}
+            {{ tempoDecorrido }}
           </strong>
         </section>
         <button class="button" @click="iniciar">
@@ -38,6 +38,12 @@
     data () {
       return {
         tempoEmsegundos: 0
+      }
+    },
+    computed: {
+      tempoDecorrido () : string {
+        return new Date(this.tempoEmsegundos * 1000).toISOString().substring(11,8) // new Date().toISOString() = '2023-10-08T23:48:23.034Z'
+        // substring(11,8) para pegar só o que interessa HH : MM : SS
       }
     },
     methods: {
