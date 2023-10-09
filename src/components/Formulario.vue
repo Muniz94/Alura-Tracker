@@ -37,12 +37,13 @@
     name: 'Formulário',
     data () {
       return {
-        tempoEmsegundos: 0
+        tempoEmsegundos: 0,
+        cronometro: 0
       }
     },
     computed: {
       tempoDecorrido () : string {
-        return new Date(this.tempoEmsegundos * 1000).toISOString().substring(11,8) // new Date().toISOString() = '2023-10-08T23:48:23.034Z'
+        return new Date(this.tempoEmsegundos * 1000).toISOString().substr(11,8) // new Date().toISOString() = '2023-10-08T23:48:23.034Z'
         // substring(11,8) para pegar só o que interessa HH : MM : SS
       }
     },
@@ -50,13 +51,12 @@
       iniciar () {
         // começar a contagem
         // 1 seg = 1000 ms
-        setInterval(() => {
+        this.cronometro = setInterval(() => {
           this.tempoEmsegundos += 1
         }, 1000)
-        console.log("Iniciando")
       },
       finalizar () {
-        console.log("Finalizando")
+        clearInterval(this.cronometro);
       }
     }
   })
