@@ -2,8 +2,9 @@
   <div class="box">
     <div class="columns">
       <div class="column is-8" role="form" aria-label="Formulário para a criação de uma nova tarefa">
-        <input type="text" class="input" placeholder="Qual tarefa você deseja iniciar">
+        <input type="text" class="input" placeholder="Qual tarefa você deseja iniciar"
         v-model="descricao"
+        />
       </div>
       <div class="column">
         <Temporizador @aoTemporizadorFinalizado="finalizarTarefa"/> <!-- Linka o evento ao método -->
@@ -31,6 +32,7 @@
       finalizarTarefa(tempoDecorrido: number) : void {
         console.log('Tempo da Tarefa:', tempoDecorrido)
         console.log('Descrição da Tarefa:', this.descricao)
+        this.descricao = ''
       }
     }
   });
