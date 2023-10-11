@@ -1,5 +1,5 @@
 <template>
-  <div class="box has-text-weight-bold">
+  <div class="box has-text-weight-bold" :style="estilos">
     <slot></slot> <!--Renderiza o conteúdo do 'box'(nesse caso) para dentro dessa tag-->
   </div>
 </template>
@@ -8,12 +8,19 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'Box'
+  name: 'Box',
+  data() {
+    return {
+      estilos: {
+        background: '#FAF0CA' // Se fosse background-color: teria que ser 'background-color' ou backgroundColor
+      }
+    }
+  }
 })
 </script>
 
-<style scoped> /* Scoped não passa a configuração para os componentes filhos */
+<!-- <style scoped> O que está acima equivale a isso
 .box {
   background: #FAF0CA;
 }
-</style>
+</style> -->
