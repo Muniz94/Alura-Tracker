@@ -8,6 +8,9 @@
       <div class="lista">
         <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/> <!--Para cada tarefa no array de tarefas, alguma coisa vai ser feita-->
         <!--Index é o índice que identifica o item do array-->
+        <box v-if="listaEstaVazia">
+        Você não está muito produtivo hoje :(
+        </box>
       </div>
     </div>
   </main>
@@ -17,6 +20,7 @@
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue';
 import Formulario from './components/Formulario.vue';
+import Box from './components/Box.vue'
 import Tarefa from './components/Tarefa.vue';
 import ITarefa from './interfaces/ITarefa';
 
@@ -25,11 +29,17 @@ export default defineComponent({
     components: {
       BarraLateral,
       Formulario,
-      Tarefa
+      Tarefa,
+      Box
     },
     data () {
       return {
         tarefas: [] as ITarefa[]
+      }
+    },
+    computed: {
+      listaEstaVazia () : boolean {
+        return this.tarefas.length === 0
       }
     },
     methods: {
