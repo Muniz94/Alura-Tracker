@@ -12,7 +12,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped> /* Scoped não passa a configuração para os componentes filhos */
 .box {
   background: #FAF0CA;
 }
