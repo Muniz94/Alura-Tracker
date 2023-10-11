@@ -5,7 +5,7 @@
         Descrição da Tarefa
       </div>
       <div class="column">
-        <Cronometro tempoEmsegundos="15"/>
+        <Cronometro tempoEmSegundos="15"/>
       </div>
     </div>
   </div>
