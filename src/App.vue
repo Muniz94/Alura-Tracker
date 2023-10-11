@@ -6,7 +6,8 @@
     <div class="column is-three-quarter">
       <Formulario @aoSalvarTarefa="salvarTarefa"/>
       <div class="lista">
-        <Tarefa />     
+        <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/> <!--Para cada tarefa no array de tarefas, alguma coisa vai ser feita-->
+        <!--Index é o índice que identifica o item do array-->
       </div>
     </div>
   </main>
