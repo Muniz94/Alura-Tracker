@@ -30,7 +30,7 @@ Neste repositório está todo o conteúdo do projeto.
 
 ## ❓ Abrir e rodar o projeto
 
-Para iniciar o projeto, é necessário ter o node.js instalado. No terminal, digitar `npm install -g @vue/cli`. Após o CLI ser instalado,
+Para iniciar o projeto, é necessário ter o node.js instalado. No terminal, digitar(na pasta do projeto) `npm install -g @vue/cli`. Após o CLI ser instalado,
 digite `npm run serve` para editar o projeto em tempo de execução.
 
 
